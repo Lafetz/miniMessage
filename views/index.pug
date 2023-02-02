@@ -1,0 +1,10 @@
+extends layout
+
+block content
+ each message in messages
+  div
+   h1 message
+   p=message.text+" "+message.user
+   p="user added on "+message.added
+
+  
