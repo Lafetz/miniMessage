@@ -17,4 +17,16 @@ route.get("/", (req, res) => {
     messages: messages,
   });
 });
+route.get("/new", (req, res) => {
+  res.render("form");
+});
+route.post("/new", (req, res) => {
+  const message = {
+    text: req.body.message,
+    user: req.body.userName,
+    added: new Date(),
+  };
+  messages.push(message);
+  res.redirect("/");
+});
 module.exports = route;

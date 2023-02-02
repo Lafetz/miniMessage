@@ -7,7 +7,7 @@ var logger = require("morgan");
 var app = express();
 //routes
 const home = require("./routes/home");
-const newMessage = require("./routes/newMessage");
+
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "pug");
@@ -18,7 +18,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 app.use("/", home);
-app.use("/new", newMessage);
+
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
   next(createError(404));
