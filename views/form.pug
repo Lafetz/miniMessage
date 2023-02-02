@@ -1,6 +1,9 @@
 extends layout
 
 block content
- form(method="POST" action="/new") 
-  input(type="text")
+ form(method="POST" action="/new")
+  label message     
+   input(name="message" type="text" required)
+  label Name         
+   input(name="userName" type="text" required) 
   button Add
